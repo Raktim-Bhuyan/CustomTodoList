@@ -4,10 +4,11 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const _ = require('lodash');
 const app = express();
+require('dotenv').config();
 app.use(bodyParser.urlencoded({extended:true}));
 
-const mongo_user = "RaktimBhuyan";
-const mongo_password = "qwertyuiop";
+const mongo_user = process.env.mongo_user;
+const mongo_password = process.env.mongo_password;
 
 //set ejs as the view engine
 app.set('view engine', 'ejs');
